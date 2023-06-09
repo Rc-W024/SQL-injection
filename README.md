@@ -1,4 +1,4 @@
-# SQL Injection
+# SQL Injection and Anti-Injection
 In the field of information security, SQL injection is a security vulnerability that occurs in the database layer of a Web program, and it is the most common and simplest vulnerability in a website. This is the security basis for space information countermeasures, which can effectively protect GEOINT data. In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. Finally, embed simple parameterized queries in web application code to prevent SQL injection behavior.
 
 在信息安全领域，SQL注入是发生在Web 程序中数据库层的安全漏洞，是网站存在最多也是最简单的漏洞。这是空间信息对抗的安全基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。最后，在Web程序代码中嵌入简单的参数化查询来防止SQL注入行为。
