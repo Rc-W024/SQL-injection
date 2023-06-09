@@ -1,7 +1,7 @@
 # SQL Injection
-In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. Finally, embed simple parameterized queries in web application code to prevent SQL injection behavior.
+In the field of information security, SQL injection is a security vulnerability that occurs in the database layer of a Web program, and it is the most common and simplest vulnerability in a website. This is the security basis for space information countermeasures, which can effectively protect GEOINT data. In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. Finally, embed simple parameterized queries in web application code to prevent SQL injection behavior.
 
-为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。最后，在Web程序代码中嵌入简单的参数化查询来防止SQL注入行为。
+在信息安全领域，SQL注入是发生在Web 程序中数据库层的安全漏洞，是网站存在最多也是最简单的漏洞。这是空间信息对抗的安全基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。最后，在Web程序代码中嵌入简单的参数化查询来防止SQL注入行为。
 
 ## Experimental Framework
 **1. Create the database table**
@@ -32,7 +32,12 @@ In particular, it is necessary to generate a corresponding log for each query pr
 
 **4. Repair and defense**
 
-In anti-SQL injection, parameterized queries, prepared statements or ORM frameworks are usually used to defend against attacks. For parameterized queries, it is one of the common practices to replace single quotes in input statements with double quotes: `input_str.replace("'","''")`
+In anti-SQL injection, parameterized queries, prepared statements or ORM frameworks are usually used to defend against attacks. For parameterized queries, it is one of the common practices to replace single quotes in input statements with double quotes:
+
+```python
+# replace a single quote with two single quotes
+input_str.replace("'","''")
+```
 
 This substitution is to prevent the single quotes in the user input string from interfering with the structure of the SQL query statement. SQL query statements usually use single quotes to represent string values. If the string entered by the user contains single quotes and is not properly processed, it may cause syntax errors or unexpected behavior of the query statement. Attackers usually try to bypass the end of the string and inject malicious code by inserting single quotes in the input. By replacing, SQL injection attacks can be effectively prevented.
 
