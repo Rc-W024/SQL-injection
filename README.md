@@ -59,7 +59,7 @@ In this case, *SQLAlchemy* can be used, which is a popular Python ORM library th
 ```python
 # create session object
 session=Session()
-# 执行查询
+# execute query
 results=session.query(SimData).filter_by(username=filtered_username).first()
 ```
 
