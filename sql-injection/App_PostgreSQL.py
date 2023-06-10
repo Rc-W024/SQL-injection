@@ -31,7 +31,7 @@ def connect_to_db():
             host="localhost",
             database="postgres",
             user="postgres",
-            password="padxzmvm"
+            password="XXXXX"
         )
         logging.info('Connected!')
         #return conn
