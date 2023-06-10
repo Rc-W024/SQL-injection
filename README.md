@@ -28,10 +28,13 @@ Create a simple Web application based on *Flask* framework in Python to implemen
 
 In particular, it is necessary to generate a corresponding log for each query process of the user and record it in a specified file, including the received malicious input and the executed query statement, so that the log can be analyzed later and the corresponding injection attack behavior can be identified and checked. In this case, the *logging* package is used to generate the logs.
 
-此外，需要为用户的每次查询流程生成相应的日志并记录在指定文件中，包括接收到的恶意输入和执行的查询语句，以便在后期分析日志并识别、检查相应的注入攻击行为。在本例中，利用*logging*包来设置并生成日志。
+As shown in the log file in the figure below, the red frame represents the query information collected from the user, and the blue frame represents the SQL statement executed by the system.
+
+此外，需要为用户的每次查询流程生成相应的日志并记录在指定文件中，包括接收到的恶意输入和执行的查询语句，以便在后期分析日志并识别、检查相应的注入攻击行为。在本例中，利用*logging*包来设置并生成日志。如下图日志文件所示，红框表示采集到用户的查询信息，蓝框表示系统所执行的SQL语句。
+
+![log](https://github.com/Rc-W024/SQL-injection/assets/97808991/d0b6a2d1-57e6-4fbf-9453-3ad690e522bf)
 
 **4. Repair and defense**
-
 In anti-SQL injection, parameterized queries, prepared statements or ORM frameworks are usually used to defend against attacks. For parameterized queries, it is one of the common practices to replace single quotes in input statements with double quotes:
 
 ```python
