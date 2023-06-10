@@ -47,4 +47,20 @@ This substitution is to prevent the single quotes in the user input string from 
 ![log_defense](https://github.com/Rc-W024/SQL-injection/assets/97808991/05ae59a7-30e9-4a72-bf9d-b8b0fc3e4aa1)
 
 ## Defense of Injection
+### Object–relational mapping (ORM)
+ORM prevents SQL injection attacks by separating variable parts of SQL statements, such as parameters in query conditions, from code. ORM will convert the variable part into a precompiled statement, and then send it and parameters to the database for execution, which can prevent malicious users from attacking the database by constructing SQL statements.
 
+ORM通过将SQL语句中的变量部分（例如查询条件中的参数）与代码分离，来防止SQL注入攻击。ORM工具会将变量部分转换成预编译语句，然后将预编译语句和参数分别发送到数据库中执行。这样可以避免恶意用户通过构造SQL语句来攻击数据库。
+
+In this case, *SQLAlchemy* can be used, which is a popular Python ORM library that provides a safe and convenient way to interact with databases. The modules provided by [`ORM.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/ORM.py) in the `scripts` folder can be embedded into the main program code, and only need to add the following statement in `def query()`:
+
+本例中，可使用*SQLAlchemy*，是一个流行的Python ORM库，提供了一种安全和方便的方式来与数据库交互。可将`scripts`文件夹中[`ORM.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/ORM.py)提供的模块嵌入到主程序代码中，并只需要在`def query()`部分添加如下语句即可：
+
+```python
+# create session object
+session=Session()
+# 执行查询
+results=session.query(SimData).filter_by(username=filtered_username).first()
+```
+
+### A
