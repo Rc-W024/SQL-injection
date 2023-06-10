@@ -33,16 +33,16 @@ As shown in the log file in the figure below, the red frame represents the query
 ![log](https://github.com/Rc-W024/SQL-injection/assets/97808991/f1ebcc9b-e2d4-4def-980b-3e1503bdcf51)
 
 **4. Repair and defense**
-In anti-SQL injection, parameterized queries, prepared statements or ORM frameworks are usually used to defend against attacks. For parameterized queries, it is one of the common practices to replace single quotes in input statements with double quotes:
+In anti-SQL injection, parameterized queries, prepared statements or ORM framework are usually used to defend against attacks. For parameterized queries, it is one of the common practices to replace single quotes in input statements with double quotes:
 
 ```python
 # replace a single quote with two single quotes
 input_str.replace("'","''")
 ```
 
-This substitution is to prevent the single quotes in the user input string from interfering with the structure of the SQL query statement. SQL query statements usually use single quotes to represent string values. If the string entered by the user contains single quotes and is not properly processed, it may cause syntax errors or unexpected behavior of the query statement. Attackers usually try to bypass the end of the string and inject malicious code by inserting single quotes in the input. By replacing, SQL injection attacks can be effectively prevented.
+This substitution is to prevent the single quotes in the user input string from interfering with the structure of the SQL query statement. SQL query statements usually use single quotes to represent string values. If the string entered by the user contains single quotes and is not properly processed, it may cause syntax errors or unexpected behavior of the query statement. Attackers usually try to bypass the end of the string and inject malicious code by inserting single quotes in the input. By replacing, SQL injection attacks can be effectively prevented. In this case, parameterized queries are implemented using input validation and filtering.
 
-在反SQL注入中，通常使用参数化查询、预编译语句或ORM框架来防御攻击行为。对于参数化查询，将输入语句的单引号替换为双引号是一种常见的做法之一。这种替换是为了防止用户输入字符串中的单引号干扰SQL查询语句的结构。SQL查询语句通常使用单引号来表示字符串值，如果用户输入的字符串包含单引号且没有进行适当处理，就可能导致查询语句的语法错误或意外行为。攻击者通常会尝试通过在输入中插入单引号来绕过字符串的结束并注入恶意代码，通过替换，可有效防止SQL注入攻击。
+在反SQL注入中，通常使用参数化查询、预编译语句或ORM框架来防御攻击行为。对于参数化查询，将输入语句的单引号替换为双引号是一种常见的做法之一。这种替换是为了防止用户输入字符串中的单引号干扰SQL查询语句的结构。SQL查询语句通常使用单引号来表示字符串值，如果用户输入的字符串包含单引号且没有进行适当处理，就可能导致查询语句的语法错误或意外行为。攻击者通常会尝试通过在输入中插入单引号来绕过字符串的结束并注入恶意代码，通过替换，可有效防止SQL注入攻击。在本例中，使用了输入验证和过滤的方式实现参数化查询。
 
 ![log_defense](https://github.com/Rc-W024/SQL-injection/assets/97808991/05ae59a7-30e9-4a72-bf9d-b8b0fc3e4aa1)
 
@@ -63,4 +63,7 @@ session=Session()
 results=session.query(SimData).filter_by(username=filtered_username).first()
 ```
 
-### A
+### Minimize SQL server user permissions
+Use [`MinPermissions.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/MinPermissions.py) to create a database user with only execute view permissions, and use the user's credentials when connecting to the database, which prevents malicious users from injecting malicious code in queries. In addition, parameterized query can be used in combination to ensure that user input is treated as a parameter rather than a part of the code during the query process, which is helpful for the defense of SQL injection attacks.
+
+使用[`MinPermissions.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/MinPermissions.py)创建一个只具有执行查看权限的数据库用户，并在连接数据库时使用该用户的凭据，这样可以防止恶意用户在查询中注入恶意代码。另外，可结合使用参数化查询，确保用户输入在查询过程中被视为参数而不是代码的一部分，助于SQL注入攻击的防御。
