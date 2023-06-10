@@ -5,7 +5,7 @@ import logging
 import os
 
 # log file setting
-log_directory=r'C:\Users\吴\Desktop\sql\logs'
+log_directory=r'...\sql-injection\logs'
 log_filename='web.log'
 log_file_path=os.path.join(log_directory,log_filename)
 
@@ -21,7 +21,7 @@ if os.access(log_directory,os.W_OK):
 else:
     print(f'No write permission to directory: {log_directory}')
 
-######MAIN######
+###### MAIN ######
 
 app=Flask(__name__)
 
@@ -44,7 +44,7 @@ conn=psycopg2.connect(
             host="localhost",
             database="postgres",
             user="postgres",
-            password="padxzmvm"
+            password="XXXXXX"
         )
     
 # desconnecting...
@@ -57,7 +57,7 @@ def disconnect_from_db(conn):
 def index():
     return render_template('index.html')
     
-######SQL######
+###### SQL ######
 
 # handle user input and execute queries
 @app.route('/query',methods=['POST'])
@@ -108,7 +108,7 @@ def query():
     else:
         return render_template('index.html')
 
-######DEFENSE######
+###### DEFENSE ######
 
 # filter user input
 def filter_input(input_str):
