@@ -67,3 +67,12 @@ results=session.query(SimData).filter_by(username=filtered_username).first()
 Use [`MinPermissions.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/MinPermissions.py) to create a database user with only execute view permissions, and use the user's credentials when connecting to the database, which prevents malicious users from injecting malicious code in queries. In addition, parameterized query can be used in combination to ensure that user input is treated as a parameter rather than a part of the code during the query process, which is helpful for the defense of SQL injection attacks.
 
 使用[`MinPermissions.py`](https://github.com/Rc-W024/SQL-injection/blob/main/scripts/MinPermissions.py)创建一个只具有执行查看权限的数据库用户，并在连接数据库时使用该用户的凭据，这样可以防止恶意用户在查询中注入恶意代码。另外，可结合使用参数化查询，确保用户输入在查询过程中被视为参数而不是代码的一部分，助于SQL注入攻击的防御。
+
+### Avoid dynamic SQL queries
+When the system directly splices the input content provided by the user into the query statement, the attacker can use the input special characters to modify the query logic to execute malicious SQL code, which will lead to database data leakage or tampering, and illegal access to full access rights. By dynamically building SQL queries, the system can more easily filter and validate user input, reducing the risk of SQL injection.
+
+当系统直接将用户提供的输入内容拼接到查询语句中时，攻击者可利用输入的特殊字符来修改查询逻辑来执行恶意SQL代码，这会导致数据库数据泄露或篡改、非法获取完全访问权限等问题。通过动态构建SQL查询，系统可更容易地过滤和验证用户输入，从而降低SQL注入的风险。
+
+In this case, query statements are constructed dynamically using parameterized queries rather than string concatenation. In *psycopg2*, the `%s` placeholder is used to denote query parameters and passed as a tuple to `execute()`.
+
+在本例中，使用参数化查询而不是通过字符串拼接动态构建查询语句。在*psycopg2*中，使用`%s`占位符来表示查询参数，并将其作为元组传递给`execute()`。
