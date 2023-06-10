@@ -1,28 +1,28 @@
 # SQL Injection and Anti-Injection
-In the field of information security, SQL injection is a security vulnerability that occurs in the database layer of a Web program, and it is the most common and simplest vulnerability in a website. This is the security basis for space information countermeasures, which can effectively protect GEOINT data. In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. Finally, embed simple parameterized queries in web application code to prevent SQL injection behavior.
+In the field of cybersecurity, SQL injection is a security vulnerability that occurs in the database layer of a Web program, and it is the most common and simplest vulnerability in a website. This is the basis of spatial information security, which can effectively protect GEOINT data. In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. Finally, embed simple parameterized queries in web application code to prevent SQL injection behavior.
 
-在信息安全领域，SQL注入是发生在Web 程序中数据库层的安全漏洞，是网站存在最多也是最简单的漏洞。这是空间信息对抗的安全基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。最后，在Web程序代码中嵌入简单的参数化查询来防止SQL注入行为。
+在网络空间安全领域，SQL注入是发生在Web程序中数据库层的安全漏洞，是网站存在最多也是最简单的漏洞。这是空间信息安全的基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。最后，在Web程序代码中嵌入简单的参数化查询来防止SQL注入行为。
 
 ## Experimental Framework
 **1. Create the database table**
 
-Create a user password table based on PostgreSQL, including `id`, `username` and `password` fields, used to store user's information.
+Create a GEOINT table based on PostgreSQL, including `id`, `username`, `password`, and geometry (`geom`) fields, used to store GEOINT information.
 
-基于PostgreSQL创建一个用户密码表，包含`id`、`username`和`password`字段，用于存储用户信息。
+基于PostgreSQL创建一个空间情报信息表，包含`id`、`username`、`password`和`geom`字段，用于存储情报信息。
 
-![table](https://github.com/Rc-W024/SQL-injection/assets/97808991/c440a4ca-9217-4f02-8e4e-c68de300a5b3)
+![table](https://github.com/Rc-W024/SQL-injection/assets/97808991/64d2c6fb-7849-4f28-85aa-a403faeaf95a)
 
-10 cases of user information are randomly generated for simulation.
+30 cases of GEOINT are randomly generated for simulation.
 
-随机生成10组用户信息进行仿真。
+随机生成30组情报信息进行仿真。
 
-![info](https://github.com/Rc-W024/SQL-injection/assets/97808991/1cf4919a-5e34-4ae1-8476-4ec86fed867d)
+![info](https://github.com/Rc-W024/SQL-injection/assets/97808991/4bf4972f-6508-40ad-b6a1-17ba2ece25c0)
 
 **2. Create the logic script**
 
-Create a simple Web application based on *Flask* framework in Python to implement user input and query logic, including 2 HTML pages. It should be noted that when using *Flask*'s `render_template` function, the program will find in the `templates` folder for an HTML file that matches the specified template name. This convention is to organize and manage the Web template files and separate them from other codes to provide better maintainability and scalability. Futhermore, this also prevents the template files from being publicly accessible.
+Create a simple Web application based on *Flask* framework in Python to implement user input and query logic, including a HTML page. It should be noted that when using *Flask*'s `render_template` function, the program will find in the `templates` folder for an HTML file that matches the specified template name. This convention is to organize and manage the Web template files and separate them from other codes to provide better maintainability and scalability. Futhermore, this also prevents the template files from being publicly accessible.
 
-创建一个简单的基于Python *Flask*框架的Web应用程序，以实现用户输入、查询逻辑，其中包含了两个用于可视化的HTML页面。需要注意的是，当使用*Flask*的`render_template`函数时，程序会在 `templates`文件夹中查找与指定模板名称匹配的HTML文件。这种约定是为了组织和管理Web的模板文件，使其与其他代码分离，以提供更好的可维护性和扩展性。同时，这样还可以避免模板文件被公开访问。
+创建一个简单的基于Python *Flask*框架的Web应用程序，以实现用户输入、查询逻辑，其中包含了一个用于可视化的HTML页面。需要注意的是，当使用*Flask*的`render_template`函数时，程序会在 `templates`文件夹中查找与指定模板名称匹配的HTML文件。这种约定是为了组织和管理Web的模板文件，使其与其他代码分离，以提供更好的可维护性和扩展性。同时，这样还可以避免模板文件被公开访问。
 
 **3. Monitoring and logging**
 
