@@ -6,11 +6,9 @@ In the field of cybersecurity, SQL injection is a security vulnerability that oc
 ## Experimental Framework
 **1. Create the database table**
 
-Create a GEOINT table based on PostgreSQL, including `id`, `username`, `password`, and geometry (`geom`) fields, used to store GEOINT information.
+Using [`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql) to create a GEOINT table based on PostgreSQL, including `id`, `username`, `password`, and geometry (`geom`) fields, used to store GEOINT information.
 
-基于PostgreSQL创建一个空间情报信息表，包含`id`、`username`、`password`和`geom`字段，用于存储情报信息。
-
-![table](https://github.com/Rc-W024/SQL-injection/assets/97808991/64d2c6fb-7849-4f28-85aa-a403faeaf95a)
+基于PostgreSQL，使用[`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql)示例代码创建一个空间情报信息表，包含`id`、`username`、`password`和`geom`字段，用于存储情报信息。
 
 30 cases of GEOINT are randomly generated for simulation.
 
