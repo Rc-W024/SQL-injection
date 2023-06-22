@@ -28,7 +28,7 @@ Using [`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_da
 
 30 cases of GEOINT are randomly generated for simulation.
 
-随机生成30组情报信息进行仿真。
+随机生成30组空间情报信息进行仿真。
 
 ![info](https://github.com/Rc-W024/SQL-injection/assets/97808991/4bf4972f-6508-40ad-b6a1-17ba2ece25c0)
 
