@@ -12,8 +12,8 @@ Session=sessionmaker(bind=engine)
 Base=declarative_base()
 
 # define the model class
-class SimData(Base):
-    __tablename__='sim_data'
+class Data(Base):
+    __tablename__='data'
 
     id=Column(Integer,primary_key=True)
     username=Column(String)
