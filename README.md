@@ -10,7 +10,7 @@ When accessing a dynamic web page, the web server will initiate a SQL query requ
 
 Currently, the threats of SQL injection mainly include the following situations:
 
-- Guessing solution of the background database to steal sensitive information from the website.
+- Infer and decipher the backend database to steal sensitive information from the website.
 <br>猜解后台数据库以盗取网站的敏感信息
 
 - Bypass authentication, such as bypassing authentication to log in to the background of the website.
