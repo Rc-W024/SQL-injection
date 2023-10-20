@@ -44,7 +44,7 @@ In particular, it is necessary to generate a corresponding log for each query pr
 
 As shown in the log file in the figure below, the red frame represents the query information collected from the user, and the blue frame represents the SQL statement executed by the system.
 
-此外，需要为用户的每次查询流程生成相应的日志并记录在指定文件中，包括接收到的恶意输入和执行的查询语句，以便在后期分析日志并识别、检查相应的注入攻击行为。在本例中，利用*logging*包来设置并生成日志。如下图日志文件所示，红框表示采集到用户的查询信息，蓝框表示系统所执行的SQL语句。
+此外，需要为用户的每次查询流程生成相应的日志并记录在指定文件中，包括接收到的恶意输入和执行的查询语句，以便在后期分析日志并识别、检查相应的注入攻击行为。在本例中，利用*logging*包来设置并生成日志。如下图日志文件所示，红框表示采集到的用户查询信息，蓝框表示系统所执行的SQL语句。
 
 ![log](https://github.com/Rc-W024/SQL-injection/assets/97808991/4011b517-62a8-4719-aa62-c49cda22bbad)
 
