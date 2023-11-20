@@ -4,7 +4,7 @@ In the field of cybersecurity, SQL injection is a security vulnerability that oc
 在网络空间安全领域，SQL注入是发生在Web程序中数据库层的安全漏洞，是网站存在最多、最简单的漏洞。SQL攻防是空间信息安全的基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。后续，在Web程序代码中嵌入简单的参数化查询来防御注入行为。
 
 ## Injection Principle
-When accessing a dynamic web page, the web server will initiate a SQL query request to the data access layer. If the permission verification is passed, the SQL statement will be executed. In practice, if the data entered by the user is constructed into malicious SQL code, and the Web program does not review the dynamically constructed statement parameters, a security hole will be left.
+When accessing a dynamic web page, the web server will initiate a SQL query request to the data access layer. If the permission verification is passed, the SQL statement will be executed. In practice, if the data entered by the user is constructed into malicious SQL code, while the Web program does not review the dynamically constructed statement parameters, a security hole will be left.
 
 当访问动态网页时，Web服务器会向数据访问层发起SQL查询请求。如果权限验证通过就会执行SQL语句。在实际情况中，如果用户输入的数据被构造成恶意SQL代码，Web程序又未对动态构造的语句参数进行审查，就会留下安全漏洞。当前，SQL注入的威胁主要有如下情况：
 
