@@ -61,7 +61,7 @@ This substitution is to prevent the single quotes in the user input string from 
 
 ## Defense of Injection
 ### Object–relational mapping (ORM)
-ORM prevents SQL injection attacks by separating variable parts of SQL statements, such as parameters in query conditions, from code. ORM will convert the variable part into a precompiled statement, and then send it and parameters to the database for execution, which can prevent malicious users from attacking the database by constructing SQL statements.
+ORM prevents SQL injection attacks by separating variable parts of SQL statements such as parameters in query conditions from code. ORM will convert the variable part into a precompiled statement, and then send it and parameters to the database for execution, which can prevent malicious users from attacking the database by constructing SQL statements.
 
 ORM通过将SQL语句中的变量部分（例如查询条件中的参数）与代码分离，来防止SQL注入攻击。ORM工具会将变量部分转换成预编译语句，然后将预编译语句和参数分别发送到数据库中执行。这样可以避免恶意用户通过构造SQL语句来攻击数据库。
 
