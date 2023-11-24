@@ -6,9 +6,10 @@ In the field of cybersecurity, SQL injection is a security vulnerability that oc
 ## Injection Principle
 When accessing a dynamic web page, the web server will initiate a SQL query request to the data access layer. If the permission verification is passed, the SQL statement will be executed. In practice, if the data entered by the user is constructed into malicious SQL code, while the Web program does not review the dynamically constructed statement parameters, a security hole will be left.
 
-当访问动态网页时，Web服务器会向数据访问层发起SQL查询请求。如果权限验证通过就会执行SQL语句。在实际情况中，如果用户输入的数据被构造成恶意SQL代码，Web程序又未对动态构造的语句参数进行审查，就会留下安全漏洞。当前，SQL注入的威胁主要有如下情况：
+当访问动态网页时，Web服务器会向数据访问层发起SQL查询请求。如果权限验证通过就会执行SQL语句。在实际情况中，如果用户输入的数据被构造成恶意SQL代码，Web程序又未对动态构造的语句参数进行审查，就会留下安全漏洞。
 
 Currently, the threats of SQL injection mainly include the following situations:
+<br>当前，SQL注入的威胁主要有如下情况：
 
 - Infer and decipher the backend database to steal sensitive information from the website.
 <br>猜解后台数据库以盗取网站的敏感信息
