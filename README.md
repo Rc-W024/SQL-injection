@@ -18,14 +18,14 @@ Currently, the threats of SQL injection mainly include the following situations:
 <br>绕过认证，如绕过验证登录网站后台
 
 - Inject that uses database stored procedures to perform operations such as privilege escalation.
-<br>注入可借助数据库的存储过程进行提权等操作的恶意代码
+<br>注入可借助数据库的存储过程进行提升权限等操作的恶意代码
 
 ## Experimental Framework
 **1. Create the database table**
 
-Using [`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql) to create a GEOINT table based on PostgreSQL, including `id`, `username`, `password`, and geometry (`geom`) fields, used to store GEOINT information. And 30 cases of GEOINT are randomly generated for simulation.
+Using [`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql) to create a GEOINT table based on PostgreSQL, including `id`, `username`, `password`, and geometry (`geom`) fields, used to store GEOINT information. And 30 cases of data are randomly generated for simulation.
 
-基于PostgreSQL，使用[`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql)示例代码创建一个空间情报信息表，包含`id`、`username`、`password`和`geom`字段，用于存储情报信息。并随机生成30组空间情报信息进行仿真。
+基于PostgreSQL，使用[`sim_data.sql`](https://github.com/Rc-W024/SQL-injection/blob/main/sim_data.sql)示例代码创建一个空间情报信息表，包含`id`、`username`、`password`和`geom`字段，用于存储情报信息。并随机生成30组情报数据进行仿真。
 
 ![info](https://github.com/Rc-W024/SQL-injection/assets/97808991/4bf4972f-6508-40ad-b6a1-17ba2ece25c0)
 
