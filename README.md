@@ -1,6 +1,8 @@
 # SQL Injection and Anti-Injection
 English | [中文](README_CN.md)
 
+![](https://skillicons.dev/icons?i=python,postgres)
+
 In the field of cybersecurity, SQL injection is a security vulnerability that occurs in the database layer of a Web program, which is the most common and simplest vulnerability in a website. SQL attack-defense is the basis of spatial information security, which can effectively protect the data of GEOINT. In order to study SQL injection, a basic simulation framework based on PostgreSQL injection attack is experimented. In the follow-up, embed simple parameterized queries in web application code to defend against injection.
 
 ## Injection Principle
