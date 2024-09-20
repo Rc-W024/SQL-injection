@@ -1,6 +1,8 @@
 # SQL注入与反注入
 [English](README.md) | 中文
 
+![](https://skillicons.dev/icons?i=py,postgres)
+
 在网络空间安全领域，SQL注入是发生在Web程序中数据库层的安全漏洞，是网站存在最多、最简单的漏洞。SQL攻防是空间信息安全的基础，可有效保护空间情报数据。为了学习、研究SQL注入，本项目仿真了一个基于PostgreSQL注入攻击的基本框架。后续，在Web程序代码中嵌入简单的参数化查询来防御注入行为。
 
 ## 注入原理
